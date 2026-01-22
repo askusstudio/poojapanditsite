@@ -1,65 +1,87 @@
-import Image from "next/image";
+import { PromoBanner } from "@/components/PromoBanner";
+import { Navbar } from "@/components/Navbar";
+import { Button } from "@/components/ui/button";
+import Nextimage from "next/image";
+import { FaWhatsapp } from "react-icons/fa";
+import { MarqueeText } from "@/components/MarqueeText";
+import { AboutSection } from "@/components/AboutSection";
+import { Footer } from "@/components/Footer";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <main className="min-h-screen bg-white">
+      <PromoBanner />
+      <Navbar />
+      {/* Hero Image Section */}
+      <section className="w-full">
+        <div className="relative w-full aspect-[820/312] md:aspect-[3/1]">
+          <Nextimage
+            src="/site-img/hero-banner.png"
+            alt="Hero Banner"
+            fill
+            priority
+            className="object-cover"
+          />
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
+      </section>
+
+      {/* Action Buttons & WhatsApp Row */}
+      <section className="px-4 py-4 md:py-8 bg-white">
+        <div className="max-w-4xl mx-auto flex items-center justify-between gap-3 md:gap-10">
+          <Button
+            className="flex-1 max-w-[200px] h-6 md:h-8 rounded-full bg-gradient-to-b from-yellow-400 to-yellow-600 hover:from-yellow-500 hover:to-yellow-700 text-black font-bold text-lg md:text-xl shadow-[0_4px_0_0_rgba(161,130,0,1)] active:translate-y-1 active:shadow-none transition-all duration-100 uppercase"
+          >
+            Track
+          </Button>
+
           <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+            href="https://wa.me/yournumber"
             target="_blank"
             rel="noopener noreferrer"
+            className="p-2 md:p-3 bg-white rounded-full shadow-lg border border-slate-100 transform hover:scale-110 transition-transform duration-200"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
+            {/* <FaWhatsapp className="text-3xl md:text-5xl text-green-500" /> */}
           </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+
+          <Button
+            className="flex-1 max-w-[200px] h-6 md:h-8 rounded-full bg-gradient-to-b from-yellow-400 to-yellow-600 hover:from-yellow-500 hover:to-yellow-700 text-black font-bold text-lg md:text-xl shadow-[0_4px_0_0_rgba(161,130,0,1)] active:translate-y-1 active:shadow-none transition-all duration-100 uppercase"
           >
-            Documentation
-          </a>
+            Book
+          </Button>
         </div>
-      </main>
-    </div>
+      </section>
+
+      {/* Running Promo Banner */}
+      <MarqueeText text="ॐ शिवाय नमः" bg="bg-red-600" textColor="text-white" speed={15} />
+
+      {/* Secondary Banner Section */}
+      <section className="w-full">
+        <div className="relative w-full aspect-[820/312] md:aspect-[3/1]">
+          <Nextimage
+            src="/site-img/img2.webp"
+            alt="Special Offer"
+            fill
+            className="object-cover"
+          />
+        </div>
+        <div className="relative w-full aspect-[820/312] md:aspect-[3/1]">
+          <Nextimage
+            src="/site-img/img3.webp"
+            alt="Special Offer"
+            fill
+            className="object-cover"
+          />
+        </div>
+      </section>
+
+      {/* Sliding Marquee / Promo Banner */}
+
+
+      {/* About Section */}
+      <AboutSection />
+
+      {/* Footer */}
+      <Footer />
+    </main>
   );
 }
