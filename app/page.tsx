@@ -50,7 +50,7 @@ export default function Home() {
       <section className="w-full py-2">
         <div className="relative w-full aspect-[820/312] md:aspect-[3/1]">
           <Nextimage
-            src="/site-img/img2.webp"
+            src="/site-img/1.png"
             alt="Special Offer"
             fill
             className="object-cover"
@@ -85,7 +85,7 @@ export default function Home() {
         </div>
         <div className="relative w-full aspect-[820/312] md:aspect-[3/1]">
           <Nextimage
-            src="/site-img/img3.webp"
+            src="/site-img/2.png"
             alt="Special Offer"
             fill
             className="object-cover"
