@@ -7,6 +7,7 @@ import { HiMenuAlt1, HiSearch } from "react-icons/hi";
 import { FaInstagram, FaFacebookF, FaYoutube, FaTwitter, FaRegHeart, FaRegUser } from "react-icons/fa";
 import { IoBagOutline } from "react-icons/io5";
 import Link from "next/link";
+import Image from "next/image";
 
 const menuItems = [
     "BOOK PANDIT",
@@ -82,12 +83,15 @@ export function Navbar() {
                 {/* Center: Logo */}
                 <div className="flex-1 flex justify-center">
                     <Link href="/" className="group flex flex-col items-center">
-                        <span className="text-2xl md:text-3xl font-black text-orange-600 tracking-tighter transition-all group-hover:scale-105 inline-block leading-none">
-                            POOJA<span className="text-orange-400">PANDIT</span>
-                        </span>
-                        <span className="hidden md:block text-[10px] tracking-[0.3em] font-medium text-slate-400 mt-1 uppercase">
-                            Experience the Divine
-                        </span>
+                        <div className="relative w-32 h-12 md:w-48 md:h-16 transition-all group-hover:scale-105">
+                            <Image
+                                src="/site-img/logo.png"
+                                alt="POOJAPANDIT Logo"
+                                fill
+                                className="object-contain"
+                                priority
+                            />
+                        </div>
                     </Link>
                 </div>
 
