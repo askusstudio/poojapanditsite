@@ -32,13 +32,14 @@ export function Footer() {
     ];
 
     return (
-        <footer className="bg-[#dcd2c4] text-[#4a3a2a] pt-16 pb-8 px-4 md:px-8 border-t border-[#cbbca9]">
+        <footer className="bg-[#F6700B] text-[#4a3a2a] pt-16 pb-8 px-4 md:px-8 border-t border-[#cbbca9]">
             <div className="max-w-7xl mx-auto flex flex-col items-center">
                 {/* Logo Section */}
                 <div className="flex flex-col items-center mb-6">
-                    <div className="text-2xl md:text-5xl font-serif tracking-[0.2em] mb-2 text-center uppercase">
+                    {/* <div className="text-2xl md:text-5xl font-serif tracking-[0.2em] mb-2 text-center uppercase">
                         || VASTRANAND ||
-                    </div>
+                    </div> */}
+                    <img src="/site-img/logo.png" alt="vipra" height={200} width={200} />
                     <div className="text-sm italic tracking-widest text-[#6b5a4a]">
                         where tradition meets trend
                     </div>
@@ -68,27 +69,7 @@ export function Footer() {
                     ))}
                 </div>
 
-                {/* App Store Buttons */}
-                <div className="flex gap-4 mb-16 flex-wrap justify-center">
-                    <Link href="#" className="h-12 w-40 relative rounded-lg overflow-hidden flex items-center justify-center hover:scale-105 transition-transform">
-                        <NextImage
-                            src="/site-img/app-store.png"
-                            alt="Download on App Store"
-                            width={160}
-                            height={48}
-                            className="object-contain"
-                        />
-                    </Link>
-                    <Link href="#" className="h-12 w-40 relative rounded-lg overflow-hidden flex items-center justify-center hover:scale-105 transition-transform">
-                        <NextImage
-                            src="/site-img/google-play.png"
-                            alt="Get it on Google Play"
-                            width={160}
-                            height={48}
-                            className="object-contain"
-                        />
-                    </Link>
-                </div>
+
 
                 {/* Navigation Menus (Desktop Grid / Mobile Accordion) */}
                 <div className="w-full border-t border-[#cbbca9] pt-8">
@@ -123,9 +104,9 @@ export function Footer() {
                 </div>
 
                 {/* Copyright */}
-                <div className="mt-16 text-[10px] md:text-sm text-center opacity-70 tracking-widest border-t border-[#cbbca9] w-full pt-8">
+                {/* <div className="mt-16 text-[10px] md:text-sm text-center opacity-70 tracking-widest border-t border-[#cbbca9] w-full pt-8">
                     Copyright 2024 © <span className="font-bold">Vastranand Private Limited.</span> All Rights Reserved.
-                </div>
+                </div> */}
             </div>
         </footer>
     );

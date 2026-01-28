@@ -39,8 +39,8 @@ export function AboutSection() {
 
             {/* Our VIPRA Section */}
             <div className="mt-8 md:mt-12 lg:mt-16">
-                <div className="w-full bg-[#ef1b24] py-3 md:py-4 lg:py-5 mb-8">
-                    <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-black text-center uppercase tracking-widest leading-none">
+                <div className="w-full bg-[#F6700B] py-3 md:py-4 lg:py-5 mb-8">
+                    <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-w text-center uppercase tracking-widest leading-none">
                         Our VIPRA
                     </h2>
                 </div>

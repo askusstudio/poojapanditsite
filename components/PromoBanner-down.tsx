@@ -15,7 +15,7 @@ const trendingPoojas = [
 
 export function PromoBanner() {
     return (
-        <div className="w-full bg-red-600 text-white py-2 overflow-hidden whitespace-nowrap z-30">
+        <div className="w-full bg-[#F6700B] text-white py-2 overflow-hidden whitespace-nowrap z-30">
             <div className="flex">
                 <motion.div
                     animate={{ x: ["0%", "-50%"] }}
