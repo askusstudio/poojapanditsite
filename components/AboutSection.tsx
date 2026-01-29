@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 export function AboutSection() {
     return (
-        <section className="bg-[#F4E9E0]">
+        <section className="bg-white">
             {/* About Section with Background Image */}
             <div className="relative w-full min-h-[400px] md:min-h-[500px] lg:min-h-[650px] xl:min-h-[750px] overflow-hidden flex items-center justify-center">
                 {/* Mobile Background Image */}

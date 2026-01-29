@@ -18,15 +18,13 @@ export default function Home() {
       <HeroBanner />
 
       {/* Action Buttons & WhatsApp Row */}
-      <section className="px-4 py-2 md:py-3 lg:py-3 bg-white">
-        <div className="max-w-4xl lg:max-w-5xl mx-auto flex items-center justify-between gap-3 md:gap-8 lg:gap-12">
+      <section className="px-4 py-6 md:py-8 lg:py-10 bg-white">
+        <div className="max-w-4xl lg:max-w-5xl mx-auto flex items-center justify-between gap-6 md:gap-12 lg:gap-16">
           <Button
             className="flex-1 max-w-[180px] md:max-w-[200px] lg:max-w-[220px] h-8 md:h-10 lg:h-12 rounded-full bg-gradient-to-b from-yellow-400 to-yellow-600 hover:from-yellow-500 hover:to-yellow-700 text-black font-bold text-base md:text-lg lg:text-xl shadow-[0_4px_0_0_rgba(161,130,0,1)] active:translate-y-1 active:shadow-none transition-all duration-100 uppercase"
           >
             Track
           </Button>
-
-
 
           <Button
             className="flex-1 max-w-[180px] md:max-w-[200px] lg:max-w-[220px] h-8 md:h-10 lg:h-12 rounded-full bg-gradient-to-b from-yellow-400 to-yellow-600 hover:from-yellow-500 hover:to-yellow-700 text-black font-bold text-base md:text-lg lg:text-xl shadow-[0_4px_0_0_rgba(161,130,0,1)] active:translate-y-1 active:shadow-none transition-all duration-100 uppercase"
