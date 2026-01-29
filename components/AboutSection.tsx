@@ -8,18 +8,18 @@ export function AboutSection() {
     return (
         <section className="bg-[#F4E9E0]">
             {/* About Section with Background Image */}
-            <div className="relative w-full min-h-[320px] md:min-h-[450px] lg:min-h-[550px] xl:min-h-[600px] overflow-hidden flex items-center justify-center">
+            <div className="relative w-full min-h-[400px] md:min-h-[500px] lg:min-h-[650px] xl:min-h-[750px] overflow-hidden flex items-center justify-center">
                 {/* Mobile Background Image */}
                 <Image
-                    src="/site-img/bg-img-about1.png"
+                    src="/site-img/bg-img-aboutt2.png"
                     alt="About Us Background"
                     fill
-                    className="object-cover md:hidden"
+                    className="object-contain md:hidden"
                     priority
                 />
                 {/* Desktop Background Image */}
                 <Image
-                    src="/site-img/about-img-desktop.png"
+                    src="/site-img/about-img-desktopp.png"
                     alt="About Us Background"
                     fill
                     className="hidden md:block object-contain"
@@ -40,19 +40,53 @@ export function AboutSection() {
             {/* Our VIPRA Section */}
             <div className="mt-8 md:mt-12 lg:mt-16">
                 <div className="w-full bg-[#F6700B] py-3 md:py-4 lg:py-5 mb-8">
-                    <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-w text-center uppercase tracking-widest leading-none">
+                    <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-white text-center uppercase tracking-widest leading-none">
                         Our VIPRA
                     </h2>
                 </div>
-                <div className="px-4 md:px-8 max-w-sm md:max-w-md lg:max-w-lg mx-auto">
-                    <div className="relative w-full aspect-square rounded-full overflow-hidden shadow-2xl border-4 border-slate-50 bg-slate-100">
-                        <Image
-                            src="/site-img/vipra-img.png"
-                            alt="Our VIPRA"
-                            fill
-                            className="object-cover"
-                        />
-                    </div>
+                <div className="w-full overflow-hidden py-4 md:py-8">
+                    <motion.div
+                        className="flex gap-10 md:gap-16 lg:gap-20 w-max"
+                        animate={{ x: ["0%", "-50%"] }}
+                        transition={{
+                            duration: 20,
+                            repeat: Infinity,
+                            ease: "linear",
+                        }}
+                    >
+                        {/* Two sets of images to create a seamless loop */}
+                        {[...Array(2)].map((_, setIdx) => (
+                            <React.Fragment key={setIdx}>
+                                {[
+                                    { label: "Festival Puja" },
+                                    { label: "Wedding Puja" },
+                                    { label: "Vaidik Puja" }
+                                ].map((item, idx) => (
+                                    <div key={`${setIdx}-${idx}`} className="flex flex-col items-center text-center w-[160px] sm:w-[220px] md:w-[280px] lg:w-[320px] flex-shrink-0">
+                                        <div className="relative w-full aspect-square rounded-full overflow-hidden shadow-xl border-2 md:border-4 border-white bg-white transition-all duration-500 hover:shadow-2xl hover:scale-105 mb-4 md:mb-6">
+                                            <Image
+                                                src="/site-img/vipra-img.png"
+                                                alt={`Our VIPRA ${idx}`}
+                                                fill
+                                                className="object-cover"
+                                            />
+                                        </div>
+                                        <div className="flex flex-col gap-0.5">
+                                            <span className="text-[#F6700B] font-extrabold text-[8px] sm:text-[10px] md:text-xs uppercase tracking-widest">
+                                                {item.label}
+                                            </span>
+                                            <h3 className="text-slate-900 font-bold text-[10px] sm:text-sm md:text-base lg:text-lg leading-tight whitespace-nowrap">
+                                                स्व. आचार्य पंडित चक्रधर शुक्ल
+                                            </h3>
+                                        </div>
+                                        <p className="text-slate-600 font-medium text-[8px] sm:text-[10px] md:text-xs lg:text-sm mt-1">
+                                            प्रतापगढ़ उत्तर प्रदेश
+                                        </p>
+                                    </div>
+                                ))}
+                            </React.Fragment>
+                        ))}
+                    </motion.div>
                 </div>
             </div>
 
