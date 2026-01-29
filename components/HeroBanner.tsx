@@ -28,7 +28,7 @@ export function HeroBanner() {
 
     return (
         <section className="w-full">
-            <div className="relative w-full aspect-[820/343] md:aspect-[30/11] overflow-hidden">
+            <div className="relative w-full aspect-[820/383] md:aspect-[30/11] overflow-hidden">
                 <AnimatePresence initial={false}>
                     <motion.div
                         key={currentIndex}
