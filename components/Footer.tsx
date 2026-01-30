@@ -32,7 +32,7 @@ export function Footer() {
     ];
 
     return (
-        <footer className="bg-[#F6700B] text-[#4a3a2a] pt-16 pb-8 px-4 md:px-8 border-t border-[#cbbca9]">
+        <footer className="bg-[#fed7a2] text-[#4a3a2a] pt-16 pb-8 px-4 md:px-8 border-t border-[#cbbca9]">
             <div className="max-w-7xl mx-auto flex flex-col items-center">
                 {/* Logo Section */}
                 <div className="flex flex-col items-center mb-6">

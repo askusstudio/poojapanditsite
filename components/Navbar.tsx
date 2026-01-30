@@ -40,7 +40,7 @@ export function Navbar() {
                                 <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
                                 <div
                                     className="absolute inset-0 h-full w-full bg-cover bg-center"
-                                    style={{ backgroundImage: "url('/site-img/sidebar-img.png')" }}
+                                    style={{ backgroundImage: "url('/site-img/side-img.png')" }}
                                 />
 
                                 <div className="relative z-10 flex flex-col h-full p-8 pt-20">
@@ -61,8 +61,8 @@ export function Navbar() {
                                         </div>
 
                                         <div className="mt-12 text-slate-600">
-                                            <p className="text-sm">Connecting you with path of spirituality.</p>
-                                            <p className="text-sm font-semibold text-orange-600 mt-2">Available 24/7 for Global Booking</p>
+                                            <p className="text-sm">Connect your path of spirituality.</p>
+                                            <p className="text-sm font-semibold text-orange-600 mt-2">Available 24/7 for Booking</p>
                                         </div>
                                     </div>
                                 </div>
