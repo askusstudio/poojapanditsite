@@ -21,13 +21,13 @@ export default function Home() {
       <section className="px-4 py-6 md:py-8 lg:py-10 bg-white">
         <div className="max-w-4xl lg:max-w-5xl mx-auto flex items-center justify-between gap-6 md:gap-12 lg:gap-16">
           <Button
-            className="flex-1 max-w-[180px] md:max-w-[200px] lg:max-w-[220px] h-8 md:h-10 lg:h-12 rounded-full bg-gradient-to-b from-yellow-400 to-yellow-600 hover:from-yellow-500 hover:to-yellow-700 text-black font-bold text-base md:text-lg lg:text-xl shadow-[0_4px_0_0_rgba(161,130,0,1)] active:translate-y-1 active:shadow-none transition-all duration-100 uppercase"
+            className="flex-1 max-w-[180px] md:max-w-[200px] lg:max-w-[220px] h-8 md:h-10 lg:h-12 rounded-full bg-[#F6700B] hover:bg-[#d6620a] text-white font-semibold text-base md:text-lg lg:text-xl transition-all duration-200"
           >
             Track
           </Button>
 
           <Button
-            className="flex-1 max-w-[180px] md:max-w-[200px] lg:max-w-[220px] h-8 md:h-10 lg:h-12 rounded-full bg-gradient-to-b from-yellow-400 to-yellow-600 hover:from-yellow-500 hover:to-yellow-700 text-black font-bold text-base md:text-lg lg:text-xl shadow-[0_4px_0_0_rgba(161,130,0,1)] active:translate-y-1 active:shadow-none transition-all duration-100 uppercase"
+            className="flex-1 max-w-[180px] md:max-w-[200px] lg:max-w-[220px] h-8 md:h-10 lg:h-12 rounded-full bg-[#F6700B] hover:bg-[#d6620a] text-white font-semibold text-base md:text-lg lg:text-xl transition-all duration-200"
           >
             Book
           </Button>
@@ -50,7 +50,7 @@ export default function Home() {
           </div>
           <div className="flex justify-start px-2 md:px-0">
             <Button
-              className="ml-[10%] sm:ml-[15%] md:ml-[20%] w-fit px-4 md:px-8 h-8 md:h-10 lg:h-12 rounded-full bg-gradient-to-b from-yellow-400 to-yellow-600 hover:from-yellow-500 hover:to-yellow-700 text-black font-bold text-xs sm:text-sm md:text-base lg:text-lg shadow-[0_4px_0_0_rgba(161,130,0,1)] active:translate-y-1 active:shadow-none transition-all duration-100 uppercase"
+              className="ml-[10%] sm:ml-[15%] md:ml-[20%] w-fit px-4 md:px-8 h-8 md:h-10 lg:h-12 rounded-full bg-[#F6700B] hover:bg-[#d6620a] text-white font-semibold text-xs sm:text-sm md:text-base lg:text-lg transition-all duration-200"
             >
               Book an Appointment
             </Button>
@@ -84,13 +84,13 @@ export default function Home() {
                     className="object-contain"
                   />
                 </div>
-                <span className="text-[#F6700B] font-extrabold text-xs sm:text-base md:text-lg lg:text-xl uppercase tracking-widest">
+                <span className="text-red-600 font-extrabold text-xs sm:text-base md:text-lg lg:text-xl uppercase tracking-widest">
                   {item.title}
                 </span>
                 <Button
-                  className="w-full max-w-[100px] md:max-w-[160px] lg:max-w-[200px] h-6 md:h-9 lg:h-11 rounded-full bg-gradient-to-b from-yellow-400 to-yellow-600 hover:from-yellow-500 hover:to-yellow-700 text-black font-bold text-[9px] sm:text-xs md:text-sm lg:text-base shadow-[0_2px_0_0_rgba(161,130,0,1)] md:shadow-[0_3px_0_0_rgba(161,130,0,1)] active:translate-y-0.5 active:shadow-none transition-all duration-100 uppercase"
+                  className="w-full max-w-[100px] md:max-w-[160px] lg:max-w-[200px] h-6 md:h-9 lg:h-11 rounded-full bg-red-600 hover:bg-red-700 text-white font-semibold text-[9px] sm:text-xs md:text-sm lg:text-base transition-all duration-200"
                 >
-                  Book
+                  Book now
                 </Button>
               </div>
             ))}
