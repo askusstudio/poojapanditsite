@@ -17,17 +17,17 @@ export function Footer() {
         {
             id: "policy",
             title: "POLICY AND ENQUIRY",
-            links: ["Privacy Policy", "Terms of Service", "Refund Policy", "Contact Us"],
+            links: ["Privacy Policy", "Terms of Service", "Refund Policy"],
         },
         {
             id: "info",
             title: "INFORMATION",
-            links: ["About Us", "Media", "Careers", "Sustainability"],
+            links: ["Wedding puja", "Vaidik puja", "Fastival puja", "Book Appoinment"],
         },
         {
             id: "about",
             title: "ABOUT US",
-            links: ["Our Story", "The Team", "Our Heritage", "Press"],
+            links: ["About Vipra", "Contact Us", "Book Panditji"],
         },
     ];
 
@@ -47,7 +47,7 @@ export function Footer() {
 
                 {/* Vision Statement */}
                 <p className="text-center max-w-2xl font-bold text-lg md:text-xl mb-10 leading-relaxed italic">
-                    We also believe to work socially for the society along with the running business.
+                    We Are India's Largest Pandit Ji Booking Platform at Your Puja Destination.
                 </p>
 
                 {/* Social Icons */}
@@ -55,14 +55,14 @@ export function Footer() {
                     {[
                         { icon: <FaFacebookF />, href: "#" },
                         { icon: <FaInstagram />, href: "#" },
-                        { icon: <FaPinterestP />, href: "#" },
-                        { icon: <FaYoutube />, href: "#" },
+                        // { icon: <FaPinterestP />, href: "#" },
+                        // { icon: <FaYoutube />, href: "#" },
                         { icon: <FaLinkedinIn />, href: "#" },
                     ].map((social, idx) => (
                         <a
                             key={idx}
                             href={social.href}
-                            className="w-10 h-10 rounded-full border border-[#4a3a2a] flex items-center justify-center hover:bg-[#4a3a2a] hover:text-[#dcd2c4] transition-all"
+                            className="w-10 h-10 rounded-full border-2 border-red-600 flex items-center justify-center text-red-600 hover:bg-red-600 hover:text-white transition-all"
                         >
                             {social.icon}
                         </a>

@@ -10,14 +10,14 @@ import Link from "next/link";
 import Image from "next/image";
 
 const menuItems = [
-    "BOOK PANDIT",
-    "POOJA SERVICES",
-    "HOROSCOPE",
+    "EVIL EYES",
+    "ONLINE CONSULTATION",
+    "TRENDING PUJAS",
     "VASTU",
-    "ASTROLOGY",
-    "RITUALS",
-    "E-POOJA",
-    "REVIEWS",
+    "WEDDING PUJAS",
+    "FESTIVAL PUJAS",
+    "VEDIC PUJAS",
+    "ABOUT US",
     "CONTACT",
 ];
 
@@ -36,33 +36,53 @@ export function Navbar() {
                                     <HiMenuAlt1 className="h-8 w-8 text-2xl" />
                                 </Button>
                             </SheetTrigger>
-                            <SheetContent side="left" className="p-0 border-r-0 max-w-[400px] w-full bg-transparent overflow-hidden">
+                            <SheetContent side="left" className="p-0 border-r-0 w-[85vw] sm:w-[400px] max-w-[400px] bg-transparent overflow-y-auto">
                                 <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
-                                <div
-                                    className="absolute inset-0 h-full w-full bg-cover bg-center"
-                                    style={{ backgroundImage: "url('/site-img/side-img.png')" }}
-                                />
 
-                                <div className="relative z-10 flex flex-col h-full p-8 pt-20">
-                                    <div className="flex flex-col gap-6">
-                                        <h2 className="text-4xl font-bold text-slate-800 mb-4 border-b-2 border-orange-500 pb-2 w-fit">
-                                            Our     Services
-                                        </h2>
-                                        <div className="flex flex-col gap-4">
+                                {/* Background Image Container with proper sizing */}
+                                <div className="absolute inset-0 h-full w-full overflow-hidden">
+                                    <div
+                                        className="absolute inset-0 h-full w-full bg-cover bg-center bg-no-repeat opacity-95"
+                                        style={{
+                                            backgroundImage: "url('/site-img/side-img.png')",
+                                            backgroundSize: 'cover',
+                                            backgroundPosition: 'center'
+                                        }}
+                                    />
+                                </div>
+
+                                {/* Content Container with scrolling */}
+                                <div className="relative z-10 flex flex-col min-h-full p-6 sm:p-8 pt-16 sm:pt-20">
+                                    <div className="flex flex-col gap-4 sm:gap-6">
+                                        <Image src="/site-img/logo.png" alt="Side Image" width={100} height={100} />
+                                        {/* <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-800 mb-2 sm:mb-4 border-b-2 border-orange-500 pb-2 w-fit">
+                                            Our Services
+                                        </h2> */}
+                                        <div className="flex flex-col gap-3 sm:gap-4">
                                             {menuItems.map((item, index) => (
                                                 <Link
                                                     key={index}
                                                     href={`#${item.toLowerCase().replace(/\s+/g, '-')}`}
-                                                    className="text-xl text-slate-700 hover:text-orange-600 transition-colors font-medium"
+                                                    className="text-base sm:text-lg md:text-xl text-slate-700 hover:text-orange-600 transition-colors font-medium"
                                                 >
                                                     {item}
                                                 </Link>
                                             ))}
                                         </div>
 
-                                        <div className="mt-12 text-slate-600">
-                                            <p className="text-sm">Connect your path of spirituality.</p>
-                                            <p className="text-sm font-semibold text-orange-600 mt-2">Available 24/7 for Booking</p>
+                                        {/* Join as Pandit Ji Button */}
+                                        <div className="mt-6 sm:mt-8">
+                                            <Link
+                                                href="/join-pandit"
+                                                className="block w-full bg-red-600 hover:bg-red-700 text-white font-bold text-center py-3 sm:py-4 px-4 sm:px-6 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                                            >
+                                                <span className="text-base sm:text-lg">Join as Pandit Ji</span>
+                                            </Link>
+                                        </div>
+
+                                        <div className="mt-8 sm:mt-12 text-slate-600 pb-6">
+                                            <p className="text-xs sm:text-sm">Connect your path of spirituality.</p>
+                                            <p className="text-xs sm:text-sm font-semibold text-orange-600 mt-2">Available 24/7 for Booking</p>
                                         </div>
                                     </div>
                                 </div>
@@ -133,6 +153,14 @@ export function Navbar() {
                             {item}
                         </Link>
                     ))}
+
+                    {/* Join as Pandit Ji Button - Desktop */}
+                    <Link
+                        href="/join-pandit"
+                        className="bg-red-600 hover:bg-red-700 text-white font-bold text-[12px] py-2 px-6 rounded-full transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg whitespace-nowrap tracking-wide"
+                    >
+                        JOIN AS PANDIT JI
+                    </Link>
                 </div>
             </div>
         </nav>
