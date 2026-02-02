@@ -22,6 +22,9 @@ const menuItems = [
 ];
 
 export function Navbar() {
+    const [showBookingServices, setShowBookingServices] = React.useState(false);
+    const [showTrendingPuja, setShowTrendingPuja] = React.useState(false);
+
     return (
         <nav className="w-full bg-white/95 backdrop-blur-md border-b border-orange-100 flex flex-col sticky top-0 z-40 transition-all duration-300">
             {/* Main Header Row */}
@@ -44,45 +47,99 @@ export function Navbar() {
                                     <div
                                         className="absolute inset-0 h-full w-full bg-cover bg-center bg-no-repeat opacity-95"
                                         style={{
-                                            backgroundImage: "url('/site-img/side-img.png')",
-                                            backgroundSize: 'cover',
-                                            backgroundPosition: 'center'
+                                            backgroundImage: "url('/site-img/side-img.png')"
                                         }}
                                     />
                                 </div>
 
                                 {/* Content Container with scrolling */}
-                                <div className="relative z-10 flex flex-col min-h-full p-6 sm:p-8 pt-16 sm:pt-20">
-                                    <div className="flex flex-col gap-4 sm:gap-6">
-                                        <Image src="/site-img/logo.png" alt="Side Image" width={100} height={100} />
-                                        {/* <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-800 mb-2 sm:mb-4 border-b-2 border-orange-500 pb-2 w-fit">
-                                            Our Services
-                                        </h2> */}
-                                        <div className="flex flex-col gap-3 sm:gap-4">
-                                            {menuItems.map((item, index) => (
+                                <div className="relative z-10 flex flex-col h-full overflow-y-auto p-4 pt-6 pb-6">
+                                    <div className="flex flex-col gap-3">
+                                        {/* Logo Section */}
+                                        <div className="flex  mb-1 mt-14">
+                                            <Image src="/site-img/logo.png" alt="Logo" width={90} height={90} className="object-contain" />
+                                        </div>
+
+                                        {/* Book APPOINTMENT Section */}
+                                        <div className="space-y-1.5">
+                                            <button
+                                                onClick={() => setShowBookingServices(!showBookingServices)}
+                                                className="w-full text-left text-base font-bold flex items-center gap-2 text-slate-800 hover:text-orange-600 transition-colors"
+                                            >
+                                                Book APPOINTMENT <span className="text-orange-500 font-extrabold">{showBookingServices ? '−' : '+'}</span>
+                                            </button>
+                                            {showBookingServices && (
+                                                <div className="grid grid-cols-2 gap-2.5 pt-1.5 animate-in fade-in slide-in-from-top-2 duration-300">
+                                                    <Link href="/book?service=Evil%20Eyes" className="flex flex-col items-center text-center group">
+                                                        <div className="relative w-11 h-11 mb-1">
+                                                            <Image src="/site-img/between-section-img/ChatGPT_Image_Jan_27__2026__04_49_22_PM-removebg-preview-removebg-preview.png" alt="Evil Eyes" fill className="object-contain" />
+                                                        </div>
+                                                        <span className="text-[8px] font-bold uppercase tracking-tight leading-tight">Evil EYS</span>
+                                                    </Link>
+                                                    <Link href="/book?service=Online%20Consultation" className="flex flex-col items-center text-center group">
+                                                        <div className="relative w-11 h-11 mb-1">
+                                                            <Image src="/site-img/between-section-img/ChatGPT_Image_Jan_27__2026__04_49_22_PM-removebg-preview-removebg-preview.png" alt="Online Consultant" fill className="object-contain" />
+                                                        </div>
+                                                        <span className="text-[8px] font-bold uppercase tracking-tight leading-tight">Online Consultant</span>
+                                                    </Link>
+                                                </div>
+                                            )}
+                                        </div>
+
+                                        {/* Trending Puja Section */}
+                                        <div className="space-y-1.5">
+                                            <button
+                                                onClick={() => setShowTrendingPuja(!showTrendingPuja)}
+                                                className="w-full text-left text-base font-bold flex items-center gap-2 text-slate-800 hover:text-orange-600 transition-colors"
+                                            >
+                                                Trending Puja <span className="text-orange-500 font-extrabold">{showTrendingPuja ? '−' : '+'}</span>
+                                            </button>
+                                            {showTrendingPuja && (
+                                                <div className="grid grid-cols-4 gap-1 pt-1.5 animate-in fade-in slide-in-from-top-2 duration-300">
+                                                    {[
+                                                        { name: "Vedic Jamala", link: "/services/wedding-puja" },
+                                                        { name: "Vedic Tilak", link: "/services/wedding-puja" },
+                                                        { name: "Rudra Abhishek", link: "/services/trending-pujas" },
+                                                        { name: "Girih Pravesh", link: "/services/trending-pujas" }
+                                                    ].map((p, i) => (
+                                                        <Link key={i} href={p.link} className="flex flex-col items-center text-center">
+                                                            <div className="relative w-8 h-8 mb-0.5">
+                                                                <Image src="/site-img/between-section-img/ChatGPT_Image_Jan_27__2026__04_49_22_PM-removebg-preview-removebg-preview.png" alt={p.name} fill className="object-contain" />
+                                                            </div>
+                                                            <span className="text-[6.5px] font-bold uppercase leading-tight">{p.name}</span>
+                                                        </Link>
+                                                    ))}
+                                                </div>
+                                            )}
+                                        </div>
+
+                                        {/* Main Links */}
+                                        <div className="flex flex-col gap-2.5 border-t border-orange-200 pt-3 mt-1.5">
+                                            {[
+                                                { label: "WEDDING +", href: "/services/wedding-puja" },
+                                                { label: "FESTIVAL +", href: "/services/festival-puja" },
+                                                { label: "VEDIC +", href: "/services/vedic-puja" },
+                                                { label: "ABOUT", href: "/about" },
+                                                { label: "CONTACT", href: "/contact" }
+                                            ].map((item, index) => (
                                                 <Link
                                                     key={index}
-                                                    href={`#${item.toLowerCase().replace(/\s+/g, '-')}`}
-                                                    className="text-base sm:text-lg md:text-xl text-slate-700 hover:text-orange-600 transition-colors font-medium"
+                                                    href={item.href}
+                                                    className="text-sm font-bold text-slate-800 hover:text-orange-600 transition-colors uppercase"
                                                 >
-                                                    {item}
+                                                    {item.label}
                                                 </Link>
                                             ))}
                                         </div>
 
-                                        {/* Join as Pandit Ji Button */}
-                                        <div className="mt-6 sm:mt-8">
+                                        {/* Join Button */}
+                                        <div className="mt-3">
                                             <Link
                                                 href="/join-pandit"
-                                                className="block w-full bg-red-600 hover:bg-red-700 text-white font-bold text-center py-3 sm:py-4 px-4 sm:px-6 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                                                className="block w-full bg-red-600 hover:bg-red-700 text-white font-bold text-center py-2.5 px-5 rounded-full transition-all duration-300 shadow-lg"
                                             >
-                                                <span className="text-base sm:text-lg">Join as Pandit Ji</span>
+                                                <span className="text-sm">JoinAs A Pandit ji</span>
                                             </Link>
-                                        </div>
-
-                                        <div className="mt-8 sm:mt-12 text-slate-600 pb-6">
-                                            <p className="text-xs sm:text-sm">Connect your path of spirituality.</p>
-                                            <p className="text-xs sm:text-sm font-semibold text-orange-600 mt-2">Available 24/7 for Booking</p>
                                         </div>
                                     </div>
                                 </div>
@@ -147,7 +204,15 @@ export function Navbar() {
                     {menuItems.map((item, index) => (
                         <Link
                             key={index}
-                            href={`#${item.toLowerCase().replace(/\s+/g, '-')}`}
+                            href={
+                                item.toUpperCase() === "ABOUT US" ? "/about" :
+                                    item.toUpperCase() === "CONTACT" ? "/contact" :
+                                        item.toUpperCase() === "WEDDING PUJAS" ? "/services/wedding-puja" :
+                                            item.toUpperCase() === "FESTIVAL PUJAS" ? "/services/festival-puja" :
+                                                item.toUpperCase() === "VEDIC PUJAS" ? "/services/vedic-puja" :
+                                                    item.toUpperCase() === "TRENDING PUJAS" ? "/services/trending-pujas" :
+                                                        `/#${item.toLowerCase().replace(/\s+/g, '-')}`
+                            }
                             className="text-[12px] font-bold text-slate-600 hover:text-orange-600 tracking-widest transition-colors whitespace-nowrap"
                         >
                             {item}

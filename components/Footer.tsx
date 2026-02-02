@@ -91,7 +91,15 @@ export function Footer() {
                                     <ul className="flex flex-col gap-2">
                                         {section.links.map((link, i) => (
                                             <li key={i}>
-                                                <Link href="#" className="text-sm hover:underline opacity-80">
+                                                <Link
+                                                    href={
+                                                        link === "About Vipra" ? "/about" :
+                                                            link === "Contact Us" ? "/contact" :
+                                                                link === "Wedding puja" ? "/services/wedding-puja" :
+                                                                    "#"
+                                                    }
+                                                    className="text-sm hover:underline opacity-80"
+                                                >
                                                     {link}
                                                 </Link>
                                             </li>

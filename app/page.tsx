@@ -7,6 +7,7 @@ import { MarqueeText } from "@/components/MarqueeText";
 import { HeroBanner } from "@/components/HeroBanner";
 import { AboutSection } from "@/components/AboutSection";
 import { Footer } from "@/components/Footer";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -87,11 +88,16 @@ export default function Home() {
                 <span className="text-red-600 font-extrabold text-xs sm:text-base md:text-lg lg:text-xl uppercase tracking-widest">
                   {item.title}
                 </span>
-                <Button
-                  className="w-full max-w-[100px] md:max-w-[160px] lg:max-w-[200px] h-6 md:h-9 lg:h-11 rounded-full bg-red-600 hover:bg-red-700 text-white font-semibold text-[9px] sm:text-xs md:text-sm lg:text-base transition-all duration-200"
+                <Link
+                  href={item.title === "Wedding" ? "/services/wedding-puja" : "#"}
+                  className="w-full max-w-[100px] md:max-w-[160px] lg:max-w-[200px]"
                 >
-                  Book now
-                </Button>
+                  <Button
+                    className="w-full h-6 md:h-9 lg:h-11 rounded-full bg-red-600 hover:bg-red-700 text-white font-semibold text-[9px] sm:text-xs md:text-sm lg:text-base transition-all duration-200"
+                  >
+                    Book now
+                  </Button>
+                </Link>
               </div>
             ))}
           </div>
