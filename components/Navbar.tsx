@@ -138,7 +138,7 @@ export function Navbar() {
                                                 href="/join-pandit"
                                                 className="block w-full bg-red-600 hover:bg-red-700 text-white font-bold text-center py-2.5 px-5 rounded-full transition-all duration-300 shadow-lg"
                                             >
-                                                <span className="text-sm">JoinAs A Pandit ji</span>
+                                                <span className="text-sm">Join As A Pandit ji</span>
                                             </Link>
                                         </div>
                                     </div>
